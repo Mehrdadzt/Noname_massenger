@@ -51,7 +51,18 @@
         container.scrollTop = container.scrollHeight;
         //--------------------//
         textarea.value = '';
-        textarea.style.height = '40px';
+        truereply.style.display = "none";
+        truereply.innerText = "";
+      };
+    });
+
+    container.addEventListener("dblclick", function(event){
+      if(event.target.closest(".message")){
+        const Clickedmessege = event.target.closest(".message");
+        const replytext = Clickedmessege.querySelector('.message-text');
+        truereply.style.display = "block";
+        truereply.innerText = truncateString(replytext.innerText , 50);
+        container.scrollTop = container.scrollHeight;
       }
     });
 

@@ -57,7 +57,20 @@
     });
 
     container.addEventListener("dblclick", function(event){
-      if(event.target.closest(".message")){
+      let clickedreply = event.target.closest(".message");
+      if(!clickedreply)
+        return;
+
+      let sendIcon = event.target.closest(".message").querySelector(".message-seen");
+      if(!sendIcon){
+        const Clickedmessege = event.target.closest(".message");
+        const replytext = Clickedmessege.querySelector('.message-text');
+        truereply.style.display = "block";
+        truereply.innerText = truncateString(replytext.innerText , 50);
+        container.scrollTop = container.scrollHeight;
+        return;
+      }
+      if(!sendIcon.src.includes("sending.webp")){
         const Clickedmessege = event.target.closest(".message");
         const replytext = Clickedmessege.querySelector('.message-text');
         truereply.style.display = "block";

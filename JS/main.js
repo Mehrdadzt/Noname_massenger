@@ -9,9 +9,36 @@
     sendButton.addEventListener('click', function () {
       if (textarea.value.trim() !== '') {
         const message = document.createElement('div');
-        message.className = 'message sent';
-        message.textContent = textarea.value;
-        document.querySelector('.chat-messages').appendChild(message);
+        message.classList.add("message" , "sent");
+        //-------
+        const messagetext = document.createElement('div');
+        messagetext.className = "message-text";
+        messagetext.innerText = textarea.value;
+        //-------
+        const messagetale = document.createElement('div');
+        messagetale.className = "message-tale";
+        //--------
+        const messagetime = document.createElement('div');
+        messagetime.className = "message-time";
+        const now = new Date();
+        messagetime.innerText = formatDate(now);
+        //---------
+        const messageseen = document.createElement('img');
+        messageseen.src = "./Base-assets/Image/sending.webp";
+        messageseen.className = "message-seen";
+        messagetale.appendChild(messagetime);
+        messagetale.appendChild(messageseen);
+        if(truereply.style.display === 'block'){
+          const reply = document.createElement('div');
+          reply.classList.add("reply" , "sent");
+          reply.innerText = truereply.innerText;
+          message.appendChild(reply)
+        };
+        message.appendChild(messagetext);
+        message.appendChild(messagetale);
+        container.appendChild(message);
+        container.scrollTop = container.scrollHeight;
+        //--------------------//
         textarea.value = '';
         textarea.style.height = '40px';
       }

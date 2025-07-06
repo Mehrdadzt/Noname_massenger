@@ -9,9 +9,14 @@ date_default_timezone_set("Asia/Tehran");
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-    <!-- <header>Messenger</header> -->
-    <div class="container">
+    <div class="container" id="container">
         <div class="navbar">
+            <div class="header-nav">
+                <h1>Messenger</h1>
+                <div class="search-option">
+                    X
+                </div>
+            </div>
         <ul class="chats_list">
             <li class="chat">
                 <img src="profile.jpg">

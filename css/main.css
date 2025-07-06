@@ -8,29 +8,42 @@ body{
     direction: rtl;
     font-family: 'vazir';
     height: 100vh;
+    overflow-x: hidden;
 }
-/* header{
-    background-color: rgb(8 56 60 / 81%);
-    position: static;
-    backdrop-filter: blur(1px);
-    text-align: center;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    margin-top: 10px;
-    margin-right: 10px;
-    margin-left: 10px;
-    border-radius: 10px;
-    font-size: 25px;
-    color: white;
-} */
 .container{
     display: flex;
     height: 100vh;
 }
+/*----------navbar-------------*/
 .navbar{
-    width: 25%;
-    border-left: 1px solid #fff;
+    background-color: #1e1e1e;
+    min-width: 300px;
+    width: 30%;
+    border-left: 1px solid #454545;
+    border-radius: 15px 0 0 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0;
+    z-index: 10;
 }
+/*-----------*/
+.header-nav{
+    display: flex;
+    flex-direction:row-reverse;
+    align-items: center;
+    border-bottom: 1px solid #454545;
+    padding: 4px 8px;
+}
+.header-nav h1{
+    flex: 1;
+    direction: ltr;
+    font-size: 20px;
+    color: #a2a2a2;
+}
+.search-option{
+    color: #a2a2a2;
+}
+/*-----------*/
 .chats_list{
     list-style: none;
 }

@@ -51,7 +51,13 @@ date_default_timezone_set("Asia/Tehran");
                 </div>
             </div>
             <div class="chatmessage">
-                <div class="message sent">سلام</div>
+                <div class="message sent">
+                    <div class="message-text">سلام</div>
+                    <div class="message-tale">
+                        <div class="message-time"><?= date("G:i") ?></div>
+                        <img src="./Base-assets/Image/seen.webp" class="message-seen">
+                    </div>
+                </div>
                 <div class="message sent near">
                     <div class="message-text">خوبی؟ روبه‌راهی</div>
                     <div class="message-tale">
@@ -59,8 +65,34 @@ date_default_timezone_set("Asia/Tehran");
                         <img src="./Base-assets/Image/seen.webp" class="message-seen">
                     </div>
                 </div>
-                <div class="message sent">سلام خوبی قربونت سلامت باشی بابااااا فدات</div>
-                <div class="message recive">خوبی؟</div>
+                <div class="message sent">
+                    <div class="message-text">وا چرا جواب نمیدی؟</div>
+                    <div class="message-tale">
+                        <div class="message-time"><?= date("G:i") ?></div>
+                        <img src="./Base-assets/Image/seen.webp" class="message-seen">
+                    </div>
+                </div>
+                <div class="message recive">
+                    <div class="message-text">سلام</div>
+                    <div class="message-tale">
+                        <div class="message-time"><?= date("G:i") ?></div>
+                    </div>
+                </div>
+                <div class="message sent">
+                    <div class="reply sent">وا چرا جواب نمیدی؟</div>
+                    <div class="message-text">کجایی بچه؟</div>
+                    <div class="message-tale">
+                        <div class="message-time"><?= date("G:i") ?></div>
+                        <img src="./Base-assets/Image/seen.webp" class="message-seen">
+                    </div>
+                </div>
+                <div class="message recive">
+                    <div class="reply recive">کجایی بچه؟</div>
+                    <div class="message-text">هستم دیگه عشقم</div>
+                    <div class="message-tale">
+                        <div class="message-time"><?= date("G:i") ?></div>
+                    </div>
+                </div>
             </div>
             <div class="chat-input">
                 <textarea id="messageInput" placeholder="پیام بنویسید..."></textarea>

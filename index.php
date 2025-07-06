@@ -5,7 +5,7 @@ date_default_timezone_set("Asia/Tehran");
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>title</title>
+    <title>Mas</title>
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
@@ -43,7 +43,7 @@ date_default_timezone_set("Asia/Tehran");
             <div class="chat-header">
                 <img src="profile.jpg">
                 <div class="Single-info">
-                    <h4>حنانه</h4>
+                    <h4>حسنا</h4>
                     <p>آنلاین</p>
                 </div> 
                 <div class="more-button">
@@ -95,11 +95,17 @@ date_default_timezone_set("Asia/Tehran");
                 </div>
             </div>
             <div class="chat-input">
-                <textarea id="messageInput" placeholder="پیام بنویسید..."></textarea>
-                <button>ارسال</button>
+                <div class="reply-input" id="true-reply">
+                <div class="reply-cancel">X</div>
+                </div>
+                <div class="main-input">
+                    <textarea id="messageInput" placeholder="پیام بنویسید..." rows="1"></textarea>
+                    <button id="sendButton">ارسال</button>
+                </div>
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="JS/function.js"></script>
     <script type="text/javascript" src="JS/main.js"></script>
 </body>
 </html>

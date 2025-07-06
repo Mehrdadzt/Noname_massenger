@@ -47,8 +47,8 @@ body{
 .chats_list{
     list-style: none;
 }
-.chat{
-    background-color: #0077ff20;
+.chat-item{
+    background-color: #6a6a6a20;
     border-radius: 10px;
     margin: 5px;
     padding: 7px;
@@ -58,23 +58,34 @@ body{
     align-items: center;
     cursor: pointer;
 }
-.chat:hover{
-    background-color: #0077ff76;
+.chat-item:hover{
+    background-color: #bcbcbc76;
 }
-.chat img{
-    max-width:38px;
+.chat-item img{
+    max-width:45px;
     float: right;
-    border-radius: 100px;
+    border-radius: 15px;
     margin-left: 10px;
 }
 .chat-info h4{
     color: #fff;
-    font-size: 14px;
+    font-size: 15px;
     margin-bottom: 2px;
 }
 .chat-info p{
     color: #fff;
-    font-size: 10px;
+    font-size: 11px;
+}
+/*-----------*/
+.bottom-right-setting{
+    border: 1px solid #ffffff45 ;
+    margin: 7px;
+    border-radius: 7px;
+    padding: 5px;
+}
+.text-more{
+    color: #ffffff45;
+    font-size: 14px;
 }
 /*-----------------------*/
 .chatbox{

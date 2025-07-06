@@ -18,14 +18,14 @@ date_default_timezone_set("Asia/Tehran");
                 </div>
             </div>
         <ul class="chats_list">
-            <li class="chat">
+            <li class="chat-item">
                 <img src="profile.jpg">
                 <div class="chat-info">
                 <h4>حنانه</h4>
                 <p>خوبی عسلم؟</p>
                 </div>            
             </li>
-            <li class="chat">
+            <li class="chat-item">
                 <img src="profile.jpg">
                 <div class="chat-info">
                 <h4>علی</h4>
@@ -33,6 +33,11 @@ date_default_timezone_set("Asia/Tehran");
                 </div>
             </li>
         </ul>
+        <div class="bottom-right-setting">
+            <div class="text-more">
+            اینجا یه دنیای جدیده...
+            </div>
+        </div>
         </div>
         <div class="chatbox">
             <div class="chat-header">

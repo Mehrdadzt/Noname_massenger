@@ -66,9 +66,12 @@
       }
     });
 
-    textarea.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' && !e.shiftKey) {
-        e.preventDefault();
+    textarea.addEventListener("keydown", function(event) {
+      if(event.key === "Enter" & event.shiftKey){
+        return;
+      }
+      if(event.key === "Enter"){
+        event.preventDefault();
         sendButton.click();
       }
     });

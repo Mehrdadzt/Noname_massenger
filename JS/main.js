@@ -1,9 +1,20 @@
     const textarea = document.getElementById('messageInput');
     const sendButton = document.getElementById('sendButton');
+    const container = document.querySelector(".chatmessage");
+    const chatinput = document.querySelector(".chat-input");
+    const truereply = document.getElementById('true-reply');
 
     textarea.addEventListener('input', function () {
       this.style.height = 'auto';
       this.style.height = (this.scrollHeight) + 'px';
+    });
+
+    textarea.addEventListener('focus' , function(){
+      this.style.fontSize = "13.5px";
+    });
+
+    textarea.addEventListener('blur' , function(){
+      this.style.fontSize = "13px";
     });
 
     sendButton.addEventListener('click', function () {

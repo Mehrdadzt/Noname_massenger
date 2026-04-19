@@ -110,7 +110,7 @@ function sendMessageToServer(message, filePath = null, fileType = null) {
 
   const params = new URLSearchParams(paramsObject);
 
-  return fetch('./sendMessage.php?' + params.toString(), {
+  return fetch('./system/sendMessage.php?' + params.toString(), {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -143,7 +143,7 @@ function uploadFile(file, fileType) {
     else formData.append('file', file);
     formData.append('fileType', fileType);
     formData.append('room', room);
-    fetch('./uploadFile.php', {
+    fetch('./system/uploadFile.php', {
       method: 'POST',
       body: formData
     })
@@ -168,7 +168,7 @@ function uploadFile(file, fileType) {
 // ===================== Get Message function ===================== //
 getMessages = () => {
   const params = new URLSearchParams({ room, lastId });
-  fetch('./getMessages.php?' + params.toString(), {
+  fetch('./system/getMessages.php?' + params.toString(), {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
@@ -338,7 +338,7 @@ addMessages = messages => {
     // ===================== Message Menu ===================== // Mehrdad Salimi
     if (sor == "sent") {
       const menu = document.querySelector('.message-menu');
-      messageli.addEventListener('click', (e) => {        
+      messageli.addEventListener('click', (e) => {
         menu.style.top = e.clientY + 5 + "px";
         menu.style.display = 'flex';
         if (e.clientX < menu.offsetWidth) {
@@ -351,6 +351,7 @@ addMessages = messages => {
         document.querySelector('.BlackBack').style.display = 'block';
         document.querySelector('.BlackBack').setAttribute("MassegeId", message.id);
         messageli.style.zIndex = 9;
+        messageli.style.boxShadow = 'rgba(255, 255, 255, 0.3) 0px 0px 14px 0px';
         document.querySelector("#Delete-massege").setAttribute("MassegeId", message.id)
         document.querySelector("#Edit-massege").setAttribute("MassegeId", message.id)
       });
@@ -368,8 +369,9 @@ addMessages = messages => {
   SetButtomPadding();
 }
 document.querySelector('.BlackBack').addEventListener('click', (e) => {
-  const index = combinedMessages.findIndex(m => m.id == e.target.attributes.massegeid.nodeValue);  
+  const index = combinedMessages.findIndex(m => m.id == e.target.attributes.massegeid.nodeValue);
   document.querySelector("#message-list").children[index].style.zIndex = '';
+  document.querySelector("#message-list").children[index].style.boxShadow = '';
   e.target.style.display = 'none';
   document.querySelector('.message-menu').style.display = 'none';
 });
@@ -383,7 +385,7 @@ document.querySelector("#Delete-massege").addEventListener('click', (e) => {
 function DeleteMessage(idx) {
   const index = combinedMessages.findIndex(m => m.id === idx);
   const params = new URLSearchParams({ room, idx });
-  fetch('./DeleteMessage.php?' + params.toString(), {
+  fetch('./system/DeleteMessage.php?' + params.toString(), {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
